@@ -1,5 +1,3 @@
-import { StudentService } from './../../services/student.service';
-import { Student } from '../../models/student';
 import { Component, Inject, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, Validators } from '@angular/forms';
