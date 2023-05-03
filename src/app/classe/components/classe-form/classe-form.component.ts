@@ -70,7 +70,8 @@ export class ClasseFormComponent implements OnDestroy {
     if(this.classeForm.valid){
       if(this.data.isCreateForm){
         this.classeForm.value.id = Date.now() + Math.random();
-        this.classeService.create(this.classeForm.value as Classe)
+        this.classeService
+        .create(this.classeForm.value as Classe)
         .pipe(takeUntil(this.destroy$))
         .subscribe(result => {
           this._snackBar.open(result, '', {
@@ -81,9 +82,10 @@ export class ClasseFormComponent implements OnDestroy {
           this.dialogRef.close(true);
         });
       }else{
-        this.classeService.update(this.classeForm.value as Classe)
+        this.classeService
+        .update(this.classeForm.value as Classe)
         .pipe(takeUntil(this.destroy$))
-        .subscribe(result => {
+        .subscribe((result) => {
           this._snackBar.open(result, '', {
             duration: 2000,
             panelClass: ['bg-success']
