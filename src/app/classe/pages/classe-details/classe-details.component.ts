@@ -15,9 +15,9 @@ export class ClasseDetailsComponent implements OnInit {
   classes$: Observable<Classe>;
 
   constructor(private route: ActivatedRoute, private classeService: ClasseService, private location: Location){
-    const id = this.route.snapshot.paramMap?.get('id');
-    this.classeId = id ? +id : 0;
+    this.classeId = +this.route.snapshot.paramMap.get('id') ;
   }
+
 
   ngOnInit(): void {
     if(this.classeId){
