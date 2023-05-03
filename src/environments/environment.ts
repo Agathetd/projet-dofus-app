@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-    iutApiBaseUrl: ''
+    iutApiBaseUrl: 'https://projet-iut-api-mongodb.vercel.app'
 };
