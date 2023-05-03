@@ -20,18 +20,12 @@ export class ClasseFormComponent implements OnDestroy {
 
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
-  classes: string[] = [
-    'LP-DIM-FI',
-    'LP-DIM-APP'
-  ];
-
   classeForm = this.fb.group({
     id: [0, [Validators.required]],
-    firstName: ['', [Validators.required]],
-    lastName: ['', [Validators.required]],
-    class: ['', [Validators.required]],
-    email: ['', [Validators.email]],
-    dateOfBirth: ['', [Validators.required]]
+    name: ['', [Validators.required]],
+    role1: ['', [Validators.required]],
+    role2: ['', [Validators.required]],
+    role3: ['', [Validators.email]],
   });
 
   constructor(public dialogRef: MatDialogRef<ClasseFormComponent>,

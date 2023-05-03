@@ -1,12 +1,58 @@
-<p>classe-list works!</p>
-{{classes$ | async | json}}
 <div class="container">
   <h2>Liste des étudiants</h2>
   <div class="flex-grow-1 p-1">
+    <table mat-table [dataSource]="classes$" class="mat-elevation-z8">
+      <!-- name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
 
-  <table></table>
+      <!-- role1 Column -->
+      <ng-container matColumnDef="role1">
+        <th mat-header-cell *matHeaderCellDef>role1</th>
+        <td mat-cell *matCellDef="let element">{{ element.role1 }}</td>
+      </ng-container>
+
+      <!-- role2 Column -->
+      <ng-container matColumnDef="role2">
+        <th mat-header-cell *matHeaderCellDef>role2</th>
+        <td mat-cell *matCellDef="let element">{{ element.role2 }}</td>
+      </ng-container>
+
+      <!-- role3 Column -->
+      <ng-container matColumnDef="role3">
+        <th mat-header-cell *matHeaderCellDef>role3</th>
+        <td mat-cell *matCellDef="let element">{{ element.role3 }}</td>
+      </ng-container>
+
+      <!-- update Column -->
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef>update</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openClasseForm(element);"
+        >
+          <mat-icon>edit</mat-icon>
+        </td>
+      </ng-container>
+
+      <!-- delete Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>delete</th>
+        <td mat-cell *matCellDef="let element" (click)="delete(element.id); $event.stopPropagation();">
+          <mat-icon>delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="showClasseDetails(row.id); $event.stopPropagation();"></tr>
+    </table>
   </div>
   <div class="btn-holder">
-    <button mat-fab color="warn" (click)="openClasseForm()"><mat-icon>add</mat-icon></button>
+    <button mat-fab color="warn" (click)="openClasseForm()">
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
-  </div>
+</div>

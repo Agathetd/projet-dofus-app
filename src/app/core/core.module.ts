@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpLoadingInterceptor } from './interceptors/http-loading-interceptor';
 
 
@@ -25,7 +25,8 @@ import { HttpLoadingInterceptor } from './interceptors/http-loading-interceptor'
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   exports: [
     NavigationComponent,
