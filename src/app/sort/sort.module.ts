@@ -25,4 +25,4 @@ import { SortCardComponent } from './components/sort-card/sort-card.component';
     SharedModule,
   ]
 })
-export class ClasseModule { }
+export class SortModule { }

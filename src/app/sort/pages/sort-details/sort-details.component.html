@@ -1,1 +1,3 @@
-<p>sort-details works!</p>
+<button mat-raised-button (click)="goBack();"><mat-icon>arrow_back</mat-icon></button>
+{{sortId}}
+<app-sort-card [selectedSort]="sorts$ | async" (received)="showReceivedValue($event)"></app-sort-card>

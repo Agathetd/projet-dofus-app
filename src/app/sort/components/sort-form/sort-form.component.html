@@ -1,1 +1,50 @@
-<p>sort-form works!</p>
+<h2 mat-dialog-title>{{title}}</h2>
+
+<form [formGroup]="sortForm" (ngSubmit)="onSubmit()">
+  <div class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>identifiant</mat-label>
+      <input matInput formControlName="id" readonly />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>element</mat-label>
+      <mat-select formControlName="element">
+        <mat-option *ngFor="let element of elements" [value]="element">
+          {{element}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>degats</mat-label>
+      <input matInput formControlName="degats" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>coutpa</mat-label>
+      <input matInput formControlName="coutpa" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>portee</mat-label>
+      <input matInput formControlName="portee" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>critique</mat-label>
+      <input matInput formControlName="critique" />
+    </mat-form-field>
+  </div>
+
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" mat-dialog-close>Annuler</button>
+    <button mat-raised-button type="submit" cdkFocusInitial color="warn" [disabled]="!sortForm.valid || !sortForm.dirty">{{submitBtnName}}</button>
+  </mat-dialog-actions>
+</form>

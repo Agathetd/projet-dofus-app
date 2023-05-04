@@ -16,9 +16,11 @@ import { Sort } from '../../models/sort';
 export class SortListComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = [
     'name',
-    'role1',
-    'role2',
-    'role3',
+    'element',
+    'degats',
+    'coutpa',
+    'portee',
+    'critique',
     'update',
     'delete'
   ];

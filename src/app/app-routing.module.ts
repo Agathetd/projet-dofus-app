@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./classe/classe.module').then(m => m.ClasseModule)
   },
   {
+    path: 'sorts',
+    loadChildren: () => import('./sort/sort.module').then(m => m.SortModule)
+  },
+  {
   path : '**',
   component: NotFoundComponent
   }
