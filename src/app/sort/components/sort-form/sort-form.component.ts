@@ -95,6 +95,7 @@ export class SortFormComponent implements OnDestroy {
           this.dialogRef.close(true);
         });
       }else{
+        console.log(this.sortForm.value as Sort)
         this.sortService
         .update(this.sortForm.value as Sort)
         .pipe(takeUntil(this.destroy$))
