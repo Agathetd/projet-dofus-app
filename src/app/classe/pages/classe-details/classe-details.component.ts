@@ -10,7 +10,7 @@ import { ClasseService } from '../../services/classe.service';
   templateUrl: './classe-details.component.html',
   styleUrls: ['./classe-details.component.sass']
 })
-export class ClasseDetailsComponent implements OnInit {
+export class ClasseDetailsComponent {
   classeId: number;
   classes$: Observable<Classe>;
 
