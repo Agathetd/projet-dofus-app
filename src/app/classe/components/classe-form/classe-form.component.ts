@@ -1,7 +1,7 @@
 import { Component, Inject, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Classe } from '../../models/classe';
 import { ClasseService } from '../../services/classe.service';
@@ -18,6 +18,7 @@ export interface ClasseFormData {
 })
 export class ClasseFormComponent implements OnDestroy {
 
+  classes$: Observable<Classe[]>;
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   roles: string[] = [
@@ -44,6 +45,10 @@ export class ClasseFormComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.complete();
+  }
+
+  ngOnInit(): void {
+    this.classes$ = this.classeService.get();
   }
 
   setClasseForm(classe: Classe) {
