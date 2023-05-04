@@ -1,1 +1,17 @@
-{{ selectedClasse | json}}
+<mat-card>
+  <mat-card-title>Caractéristiques de la classe</mat-card-title>
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>Nom de la classe</th>
+        <td>{{ selectedClasse.name }}</td>
+      </tr>
+      <tr>
+        <th>Roles de la classe</th>
+        <td>{{ selectedClasse.role1 }}</td>
+        <td>{{ selectedClasse.role2 }}</td>
+        <td>{{ selectedClasse.role3 }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

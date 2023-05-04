@@ -1,1 +1,31 @@
-{{ selectedSort | json}}
+<mat-card>
+  <mat-card-title>Caractéristiques du sort</mat-card-title>
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>Nom du sort</th>
+        <td>{{ selectedSort.name }}</td>
+      </tr>
+      <tr>
+        <th>Element du sort</th>
+        <td>{{ selectedSort.element }}</td>
+      </tr>
+      <tr>
+        <th>Dégats du sort</th>
+        <td>{{ selectedSort.degats }}</td>
+      </tr>
+      <tr>
+        <th>Coût en pa du sort</th>
+        <td>{{ selectedSort.coutpa }}</td>
+      </tr>
+      <tr>
+        <th>Portée du sort</th>
+        <td>{{ selectedSort.portee }}</td>
+      </tr>
+      <tr>
+        <th>Chances de coup critique du sort</th>
+        <td>{{ selectedSort.critique }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

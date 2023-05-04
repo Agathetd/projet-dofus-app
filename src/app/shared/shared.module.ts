@@ -1,43 +1,43 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table'
+import { MatDialogModule } from '@angular/material/dialog';
 import { GenericPopupComponent } from './components/generic-popup/generic-popup.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
-    GenericPopupComponent,
+    GenericPopupComponent
   ],
   imports: [
     CommonModule,
     MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
     MatProgressSpinnerModule,
-    MatButtonModule,
-    MatIconModule,
   ],
-  exports: [
+  exports:[
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule,
+    MatTableModule,
+    GenericPopupComponent,
+    MatDialogModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatDialogModule,
+    MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule,
-    MatTableModule,
-    MatInputModule
+    MatSnackBarModule,
   ]
 })
 export class SharedModule { }
