@@ -38,13 +38,13 @@ export class ClasseListComponent implements OnInit, OnDestroy {
     this.classes$ = this.classeService.get();
   }
 
-  openClasseForm(classes?: Classe) {
+  openClasseForm(classe?: Classe) {
     const dialogRef = this.dialog.open(ClasseFormComponent, {
       height: '85%',
       width: '60%',
       data: {
-        isCreateForm: classes ? false : true,
-        classes: classes ? classes : undefined
+        isCreateForm: classe ? false : true,
+        classe: classe ? classe : undefined
       }
     });
 
