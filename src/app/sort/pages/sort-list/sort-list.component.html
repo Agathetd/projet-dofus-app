@@ -1,0 +1,72 @@
+<div class="container">
+  <h2>Liste des sorts Dofus</h2>
+  <div class="flex-grow-1 p-1">
+    <table mat-table [dataSource]="sorts$ | async" class="mat-elevation-z8">
+      <!-- name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- element Column -->
+      <ng-container matColumnDef="element">
+        <th mat-header-cell *matHeaderCellDef>element</th>
+        <td mat-cell *matCellDef="let element">{{ element.element }}</td>
+      </ng-container>
+
+      <!-- degats Column -->
+      <ng-container matColumnDef="degats">
+        <th mat-header-cell *matHeaderCellDef>degats</th>
+        <td mat-cell *matCellDef="let element">{{ element.degats }}</td>
+      </ng-container>
+
+      <!-- coutpa Column -->
+      <ng-container matColumnDef="coutpa">
+        <th mat-header-cell *matHeaderCellDef>coutpa</th>
+        <td mat-cell *matCellDef="let element">{{ element.coutpa }}</td>
+      </ng-container>
+
+
+      <!-- portee Column -->
+      <ng-container matColumnDef="portee">
+        <th mat-header-cell *matHeaderCellDef>portee</th>
+        <td mat-cell *matCellDef="let element">{{ element.portee }}</td>
+      </ng-container>
+
+
+      <!-- critique Column -->
+      <ng-container matColumnDef="critique">
+        <th mat-header-cell *matHeaderCellDef>critique</th>
+        <td mat-cell *matCellDef="let element">{{ element.critique }}</td>
+      </ng-container>
+
+      <!-- update Column -->
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef>update</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openSortForm(element); $event.stopPropagation();"
+        >
+          <mat-icon>edit</mat-icon>
+        </td>
+      </ng-container>
+
+      <!-- delete Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>delete</th>
+        <td mat-cell *matCellDef="let element" (click)="delete(element.id); $event.stopPropagation();">
+          <mat-icon>delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="showSortDetails(row.id); $event.stopPropagation();"></tr>
+    </table>
+  </div>
+  <div class="btn-holder">
+    <button mat-fab color="warn" (click)="openSortForm()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
