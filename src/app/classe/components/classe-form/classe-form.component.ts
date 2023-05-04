@@ -21,14 +21,7 @@ export class ClasseFormComponent implements OnDestroy {
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   roles: string[] = [
-    'Amélioration',
-    'Dégats',
-    'Tank',
-    'Entrave',
-    'Soins',
-    'Protection',
-    'Placement',
-    'Invocation'
+    "Dégats", "Amélioration", "Soins", "Entrave", "Placement", "Protection", "Tank", "Invocation"
   ]
 
   classeForm = this.fb.group({
