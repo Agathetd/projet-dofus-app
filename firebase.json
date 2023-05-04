@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "projet-dofus-app",
-    "public": "projet-dofus-app/src",
+    "public": "dist/projet-dofus-app",
     "ignore": [
       "**/.*"
     ],
@@ -28,7 +28,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "index.html"
+        "destination": "/index.html"
       }
     ]
   }
