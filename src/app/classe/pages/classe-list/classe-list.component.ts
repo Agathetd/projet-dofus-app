@@ -19,6 +19,8 @@ export class ClasseListComponent implements OnInit, OnDestroy {
     'role1',
     'role2',
     'role3',
+    'update',
+    'delete'
   ];
 
   classes$: Observable<Classe[]>;
