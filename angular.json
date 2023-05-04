@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "projet-dofus-app:build:production",
+            "firebaseProject": "projet-dofus-ad",
+            "firebaseHostingSite": "projet-dofus-ad"
+          }
         }
       }
     }

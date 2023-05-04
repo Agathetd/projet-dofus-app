@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projet-dofus-ad": {
+      "hosting": {
+        "projet-dofus-app": [
+          "projet-dofus-ad"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projet-dofus-ad"
+  }
+}
